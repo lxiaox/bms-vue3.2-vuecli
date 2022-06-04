@@ -91,6 +91,9 @@ npx husky install
    往生成的文件中写入
    npx lint-staged
 
+   // 这就是 lint 命令，可以直接在命令行输入。
+   // 问题：lint-staged obj?.prop1:.prop2 语法错误，解决办法：升级 node 版本。
+
 6. 把 package.json 文件的 lint-staged 修改为
 
 "lint-staged": {
