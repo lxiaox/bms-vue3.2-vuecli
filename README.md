@@ -53,31 +53,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 修改 package.json 中的 serve 为 dev，`npm run dev` or `yarn dev`，
 项目在在本地的 8080 端口。
 
-# 代码格式化
-
-1. vscode 插件：prettier，设置：fomat on save
-2. 在编辑区右键，`使用...格式化文档`->`配置默认格式化程序`->`选中prettier`
-3. 根目录下创建 prettier 的配置文件：.prettierrc
-
-4. 另外：eslint 的规则：eslintrc.js
-   避免冲突在配置下.eslintrc.js 里的 rules 新增增加两行代码
-   'indent': 0,
-   'space-before-function-paren': 0
-
-5. 使用 husky 强制代码格式化 创建配置文件
-   npx husky add .husky/pre-commit
-   往生成的文件中写入
-   npx lint-staged
-
-6. 把 package.json 文件的 lint-staged 修改为
-
-"lint-staged": {
-"src/\*_/_.{js,vue}": [ //src 目录下所有的 js 和 vue 文件
-"eslint --fix", // 自动修复
-"git add" // 自动提交时修复
-]
-}
-
 # git commit 提交规范
 
 1.安装 commitizen 和 cz-customizable
@@ -100,8 +75,27 @@ npm install --save-dev @commitlint/config-conventional@12.1.4 @commitlint/cli@12
 npm install husky@7.0.1 --save-dev
 npx husky install
 
-5.在 package.json 中新增指令
-"prepare": "husky install"
+# 代码格式化
 
-6.并执行
-npm run prepare
+1. vscode 插件：prettier，设置：fomat on save
+2. 在编辑区右键，`使用...格式化文档`->`配置默认格式化程序`->`选中prettier`
+3. 根目录下创建 prettier 的配置文件：.prettierrc
+
+4. eslint 的规则配置在：eslintrc.js 文件中
+   避免冲突在配置下.eslintrc.js 里的 rules 新增增加两行代码
+   'indent': 0,
+   'space-before-function-paren': 0
+
+5. 使用 husky 强制代码格式化 创建配置文件
+   npx husky add .husky/pre-commit
+   往生成的文件中写入
+   npx lint-staged
+
+6. 把 package.json 文件的 lint-staged 修改为
+
+"lint-staged": {
+"src/\*_/_.{js,vue}": [ //src 目录下所有的 js 和 vue 文件
+"eslint --fix", // 自动修复
+"git add" // 自动提交时修复
+]
+}
