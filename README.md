@@ -93,7 +93,7 @@ npm i cz-customizable@6.3.0 --save-dev
 
 3.在根目录下新建.cz-config.js 文件并写入配置 之后就可以用 git cz 来代替 git commit
 
-强制提交规范
+强制提交规范，进行 commit 校验
 
 4.使用 husky 进行强制 git 代码提交规范
 npm install --save-dev @commitlint/config-conventional@12.1.4 @commitlint/cli@12.1.4
