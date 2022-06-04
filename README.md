@@ -99,6 +99,6 @@ npx husky install
 "lint-staged": {
 "src/\*_/_.{js,vue}": [ //src 目录下所有的 js 和 vue 文件
 "eslint --fix", // 自动修复
-"git add" // 自动提交时修复// 这里有问题，会报警：“请移除git add”，并且有时git commit之后不能自动格式化，去掉这句问题解决。
+"git add" // 自动提交/ 这里有问题，会报警：“请移除git add”，并且有时git commit之后不能自动格式化，去掉这句问题解决。
 ]
 }
